@@ -18,7 +18,7 @@ public class Rotor {
 		this.notch = notch;
 	}
 	
-	private void rotate() {
+	protected void rotate() {
 		char l = left[0], r = right[0];
 		
 		for(int i = 0; i < left.length - 1; i++) {
@@ -29,8 +29,12 @@ public class Rotor {
 		right[right.length - 1] = r;
 	}
 	
+	protected boolean isOnNotch() {
+		return left[0] == notch;
+	}
+	
 	public void rotateTo(char letter) {
-		while(right[0] != letter) {
+		for(int i = 0; i < letter - 'A'; i++) {
 			rotate();
 		}
 	}
