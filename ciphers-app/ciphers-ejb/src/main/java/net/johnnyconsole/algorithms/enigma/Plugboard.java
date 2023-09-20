@@ -2,8 +2,8 @@ package net.johnnyconsole.algorithms.enigma;
 
 public class Plugboard {
 
-	private char[] left = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray();
-	private char[] right = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray();
+	private final char[] left = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray();
+	private final char[] right = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray();
 	
 	public Plugboard(String... pairs) {
 		for(String pair : pairs) {
