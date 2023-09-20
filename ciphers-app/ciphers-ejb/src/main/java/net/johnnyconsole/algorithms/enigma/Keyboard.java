@@ -6,7 +6,7 @@ public class Keyboard {
 		return letter - 'A';
 	}
 	
-	public char backward(int signal) {
+	public char reverse(int signal) {
 		return (char)(signal + 'A');
 	}
 	
