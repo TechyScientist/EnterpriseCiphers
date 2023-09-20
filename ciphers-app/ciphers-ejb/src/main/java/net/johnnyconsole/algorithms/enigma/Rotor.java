@@ -4,7 +4,7 @@ public class Rotor {
 
 	private final char[] left = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray();
 	private final char[] right;
-	private final char notch;
+	private char notch;
 	
 	public static final Rotor I = new Rotor("EKMFLGDQVZNTOWYHXUSPAIBRCJ", 'Q'),
 							  II = new Rotor("AJDKSIRUXBLHWTMCQGZNPYFVOE", 'E'),
@@ -14,7 +14,6 @@ public class Rotor {
 	
 	public Rotor(String wiring, char notch) {
 		right = wiring.toCharArray();
-		//TODO: Implement Notch and Ring Settings for Rotors
 		this.notch = notch;
 	}
 	
@@ -27,6 +26,19 @@ public class Rotor {
 		}
 		left[left.length - 1] = l;
 		right[right.length - 1] = r;
+	}
+	
+	private void reverseRotate(int n) {
+		while(n-- > 0) {
+			char l = left[25], r = right[25];
+			
+			for(int i = left.length - 1; i > 0; i--) {
+				left[i] = left[i - 1];
+				right[i] = right[i - 1];
+			}
+			left[0] = l;
+			right[0] = r;
+		}
 	}
 	
 	protected boolean isOnNotch() {
@@ -45,6 +57,13 @@ public class Rotor {
 	
 	public int reverse(int signal) {
 		return find(right, left[signal]);
+	}
+	
+	protected void setRingPosition(char position) {
+		int n = position - 'A', nNotch = notch - 'A';
+		reverseRotate(n);
+		notch = (char)(Math.abs((nNotch - n) % 26) + 'A');
+		
 	}
 	
 	private int find(char[] array, char key) {
