@@ -19,7 +19,20 @@ public class Rotor {
 	}
 	
 	private void rotate() {
-		//TODO: Implement Rotation Functionality for Rotors
+		char l = left[0], r = right[0];
+		
+		for(int i = 0; i < left.length - 1; i++) {
+			left[i] = left[i + 1];
+			right[i] = right[i + 1];
+		}
+		left[left.length - 1] = l;
+		right[right.length - 1] = r;
+	}
+	
+	public void rotateTo(char letter) {
+		while(right[0] != letter) {
+			rotate();
+		}
 	}
 	
 	public int forward(int signal) {
