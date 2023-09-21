@@ -4,4 +4,8 @@
 	    <servlet-name>InitializeEnigmaServlet</servlet-name> 
 	    <servlet-class>net.johnnyconsole.servlets.enigma.InitializeEnigmaServlet</servlet-class>
 	</servlet>
+	<servlet> 
+	    <servlet-name>EnigmaEncipherServlet</servlet-name> 
+	    <servlet-class>net.johnnyconsole.servlets.enigma.EnigmaEncipherServlet</servlet-class>
+	</servlet>
 </web-app>
