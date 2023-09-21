@@ -1,7 +1,10 @@
 package net.johnnyconsole.algorithms.enigma;
 
-public class Enigma {
+import java.io.Serializable;
 
+public class Enigma implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 	private final Keyboard keyboard = new Keyboard();
 	private final Plugboard plugboard;
 	private final Rotor left, middle, right;

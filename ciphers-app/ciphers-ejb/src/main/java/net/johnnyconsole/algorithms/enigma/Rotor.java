@@ -1,7 +1,10 @@
 package net.johnnyconsole.algorithms.enigma;
 
-public class Rotor {
+import java.io.Serializable;
 
+public class Rotor implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 	private final char[] left = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray();
 	private final char[] right;
 	private char notch;

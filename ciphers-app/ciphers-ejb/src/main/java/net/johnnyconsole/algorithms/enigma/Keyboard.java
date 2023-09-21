@@ -1,6 +1,10 @@
 package net.johnnyconsole.algorithms.enigma;
 
-public class Keyboard {
+import java.io.Serializable;
+
+public class Keyboard implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 
 	public int forward(char letter) {
 		return letter - 'A';
