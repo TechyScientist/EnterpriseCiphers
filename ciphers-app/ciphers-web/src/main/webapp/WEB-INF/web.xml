@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app> 
- <!--  <servlet> 
-    <servlet-name>StatsSingletonServlet</servlet-name> 
-    <servlet-class>ec.assignment.StatsSingletonServlet</servlet-class>
-  </servlet>
-  <servlet> 
-    <servlet-name>StatsStatefulServlet</servlet-name> 
-    <servlet-class>ec.assignment.StatsStatefulServlet</servlet-class>
-  </servlet>
-  <servlet> 
-    <servlet-name>StatsStatelessServlet</servlet-name> 
-    <servlet-class>ec.assignment.StatsStatelessServlet</servlet-class>
-  </servlet> -->
+<web-app>
+	<servlet> 
+	    <servlet-name>InitializeEnigmaServlet</servlet-name> 
+	    <servlet-class>net.johnnyconsole.servlets.enigma.InitializeEnigmaServlet</servlet-class>
+	</servlet>
 </web-app>
