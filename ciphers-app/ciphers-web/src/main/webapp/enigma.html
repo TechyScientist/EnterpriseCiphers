@@ -63,7 +63,7 @@
 				resize: none;
 			}
 			
-			ul {
+			ul, ol {
 				margin-left: 40px;
 			}
 			
@@ -78,6 +78,22 @@
 		<div id="body">
 		<a href="index.html">Return to Home</a><br/>
 			<h3>About the Enigma Machine Cipher</h3>
+			<h3>How to Use This Page</h3>
+			<p>You can use the Enigma Cipher page to enciper or decipher a message by following these steps:</p>
+			<ol>
+				<li><b>Set Enigma Parameters</b>. Set the parameters of the Enigma Machine using the first form below. Here's how to set each parameter:</li>
+				<ul style="margin-left: 60px;">
+					<li><b>Plugboard Pairs</b>: To set the plugboard pairs, choose 10 pairs of distinct letters (i.e., no letter can be included in more than one pair) to be swapped, and enter them in each of the 10 boxes.<br/><i>Example: to swap A and Q, write AQ or aq in the box.</i></li>
+					<li><b>Rotors</b>: To set the rotors for the enigma machine, choose 3 unique rotors (i.e., no rotor can be used twice) in the order you want to use them.<br/><i>Example: to use rotor I on the left, V in the middle, and II on the right, set the rotor boxes to I V II.</i> This step is order-sensitive: I V II is not the same as II I V. These will produce a different result.</li>
+					<li><b>Reflector</b>: To set the reflector for the enigma machine, select which reflector to use. There is only one reflector, so there is no invalid input.<br/><i>Example: to use reflector B, set the reflector box to B.</i></li>
+					<li><b>Rotor Rings</b>: To set the rotor ring settings, select the appropriate setting for the appropriate rotor position.<br/><i>Example: to use rotors I - IV - III with the left rotor (I) having a ring value of Q, the middle rotor (IV) having a ring value of N, and the right rotor (III) having a ring value of S, set the rings to Q N S.</i></li>
+					<li><b>Rotor Positions</b>: To set the rotor position settings, select the appropriate setting for the appropriate rotor position.<br/><i>Example: to use rotors I - IV - III with the left rotor (I) having a starting position value of P, the middle rotor (IV) having a starting position value of E, and the right rotor (III) having a starting position value of T, set the starting positions to P E T.</i></li></li>
+					<li><b>Save Path</b>: To set the save path for the enigma model, enter a fully qualified file path from the root drive, including any folders and the file name, with its extension.<br/><i>Examples: C:/enigma.bin, C:/Users/Owner/Documents/Ciphers/Models/enigma.bin</i></li>
+				</ul>
+				Once all settings are configured, press the button labeled "Set Parameters" to initialize the Enigma model.
+				<li><b>Encipher a Message</b>. Use the second form to encipher a message. Enter your message in the text box and press the "Encipher Text" button. This form can also be used to decipher text. Simply set up the model using the previous step, or import a model from a file using the third form.<br/><b>Note:</b> The Enigma Machine must be initialized before it can encipher text.</li>
+				<li><b>Reset the Enigma Machine</b>. To send another message with the same starting parameters, or to import an existing model from a friend to decipher your message,  enter a fully qualified file path from the root drive, including any folders and the file name, with its extension and select the "Reset Enigma" button.</li>
+			</ol>
 			<h3>Set Enigma Parameters</h3>
 			<form action="/ciphers/enigma/initialize" method="POST">
 				<p>Plugboard:</p>
