@@ -38,7 +38,7 @@ public class InitializeEnigmaServlet extends HttpServlet {
         	String sReflector = request.getParameter("reflector");
         	String[] pairs = new String[10];
         	for(int i = 0; i < 10; i++) {
-        		pairs[i] = request.getParameter("plugboard" + (i + 1));
+        		pairs[i] = request.getParameter("plugboard" + (i + 1)).toUpperCase();
         	}
         	String sLeftR = request.getParameter("ring-left"), sMiddleR = request.getParameter("ring-middle"), sRightR = request.getParameter("ring-right");
         	String sLeftP = request.getParameter("position-left"), sMiddleP = request.getParameter("position-middle"), sRightP = request.getParameter("position-right");
