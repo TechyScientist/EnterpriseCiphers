@@ -14,7 +14,7 @@ public class OhaversAlgorithmSingleton implements OhaversAlgorithmSingletonLocal
 		morseify(message);
         numbers = new StringBuilder(numbers).reverse().toString();
         message = demorseify(morse);
-        return message + "/" + numbers;
+        return message;
 	}
 	
 	private void morseify(String message) {

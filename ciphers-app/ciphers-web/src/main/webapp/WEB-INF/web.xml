@@ -12,4 +12,8 @@
 	    <servlet-name>EnigmaResetServlet</servlet-name> 
 	    <servlet-class>net.johnnyconsole.servlets.enigma.EnigmaResetServlet</servlet-class>
 	</servlet>
+	<servlet> 
+	    <servlet-name>OhaversAlgorithmServlet</servlet-name> 
+	    <servlet-class>net.johnnyconsole.servlets.ohavers.OhaversAlgorithmServlet</servlet-class>
+	</servlet>
 </web-app>
