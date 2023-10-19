@@ -1,0 +1,236 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Ohaver's Algorithm</title>
+		
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+				font-family: "Calibri Light", sans-serif
+			}
+			
+			div#body {
+				margin: 30px;
+			}
+			
+			h3 {
+				font-size: 20px;
+				margin-bottom: 10px;
+			}		
+			
+			div#header {
+				background: #B3282D;
+				padding: 20px;
+				color: white;
+			}
+			
+			a {
+				color: #B3282D;
+				margin-right: 10px;
+			}
+			
+			p a, li a {
+				margin-right: 0;
+			}
+			
+			ul, ol {
+				margin-left: 40px;
+			}
+			
+			hr {
+				background: #B3282D;
+				height: 20px;
+			}
+			
+			textarea {
+				width: 400px;
+				height: 100px;
+				margin-left: 10px;
+				overflow: auto;
+				resize: none;
+			}
+			
+			input[type="submit"] {
+				padding: 5px;
+			}
+					</style>
+	</head>
+	
+	<body>
+		<div id="header">
+			<h1>Ohaver's Algorithm</h1>
+			<h5>Author: Johnny Console</h5>
+		</div>
+		<div id="body">
+			<h3>About Ohaver's Algorithm</h3>
+			<p>This cipher is based on Kattis problem <a href="https://open.kattis.com/problems/falsesecurity" target="_blank">False Sense of Security (Kattis ID: falsesecurity)</a>, Summarized below:</p><br/>
+			<ul>
+				<li>The algorithm is based on modifying a morse code (dots and dashes, with words separated by spaces) string.</li>
+				<li>A morse code string is generated alongside a string of numbers, representing the length of each encoded character.</li>
+				<li>Spaces are removed from the morse string, so that without the key (the number string), the string is unreadable.</li>
+				<li>The number string is then reversed, and the morse string is decoded with those values, creating the ciphertext.</li>
+				<li>Due to the nature of the algorithm, using the ciphertext in the algorithm will return the plaintext string.</li>
+			</ul><br/>
+		<h3>Morse Code Chart (A-Z, 0-9, and Selected Symbols)</h3>
+		<table cellspacing=10>
+			<tr>
+				<th>Letter</th>
+				<th>Morse Code</th>
+				<th>Number</th>
+				<th>Morse Code</th>
+				<th>Symbol</th>
+				<th>Morse Code</th>
+			</tr>
+			<tr>
+				<th>A</th>
+				<td></td>
+				<th>1</th>
+				<td></td>
+				<th>_</th>
+				<td></td>
+			</tr>
+			<tr>
+				<th>B</th>
+				<td></td>
+				<th>2</th>
+				<td></td>
+				<th>.</th>
+				<td></td>
+			</tr>
+			<tr>
+				<th>C</th>
+				<td></td>
+				<th>3</th>
+				<td></td>
+				<th>,</th>
+				<td></td>
+			</tr>
+			<tr>
+				<th>D</th>
+				<td></td>
+				<th>4</th>
+				<td></td>
+				<th>?</th>
+				<td></td>
+			</tr>
+			<tr>
+				<th>E</th>
+				<td></td>
+				<th>5</th>
+				<td></td>
+				<th>!</th>
+				<td></td>
+			</tr>
+			<tr>
+				<th>F</th>
+				<td></td>
+				<th>6</th>
+				<td></td>
+			</tr>
+			<tr>
+				<th>G</th>
+				<td></td>
+				<th>7</th>
+				<td></td>
+			</tr>
+			<tr>
+				<th>H</th>
+				<td></td>
+				<th>8</th>
+				<td></td>
+			</tr>
+			<tr>
+				<th>I</th>
+				<td></td>
+				<th>9</th>
+				<td></td>
+			</tr>
+			<tr>
+				<th>J</th>
+				<td></td>
+				<th>0</th>
+				<td></td>
+			</tr>
+			<tr>
+				<th>K</th>
+				<td></td>
+			</tr>
+			<tr>
+				<th>L</th>
+				<td></td>
+			</tr>
+			<tr>
+				<th>M</th>
+				<td></td>
+			</tr>
+			<tr>
+				<th>N</th>
+				<td></td>
+			</tr>
+			<tr>
+				<th>O</th>
+				<td></td>
+			</tr>
+			<tr>
+				<th>P</th>
+				<td></td>
+			</tr>
+			<tr>
+				<th>Q</th>
+				<td></td>
+			</tr>
+			<tr>
+				<th>R</th>
+				<td></td>
+			</tr>
+			<tr>
+				<th>S</th>
+				<td></td>
+			</tr>
+			<tr>
+				<th>T</th>
+				<td></td>
+			</tr>
+			<tr>
+				<th>U</th>
+				<td></td>
+			</tr>
+			<tr>
+				<th>V</th>
+				<td></td>
+			</tr>
+			<tr>
+				<th>W</th>
+				<td></td>
+			</tr>
+			<tr>
+				<th>X</th>
+				<td></td>
+			</tr>
+			<tr>
+				<th>Y</th>
+				<td></td>
+			</tr>
+			<tr>
+				<th>Z</th>
+				<td></td>
+			</tr>
+		</table>
+		<h3>Use Ohaver's Algorithm</h3>
+		<form action="" method="POST">
+			<label for="message" style="vertical-align:top;">Message:</label>
+			<textarea name="message"></textarea> <br/><br/>
+			<input type="submit" value="Encrypt/Decrypt Text"/>
+		</form><br/>
+		<h3>References for this Algorithm</h3>
+		<ul>
+			<li>Kattis Problem <a href="https://open.kattis.com/problems/falsesecurity" target="_blank">falsesecurity</a></li>
+		</ul>
+		</div>
+		
+		<hr/>
+		
+	</body>
+</html>
