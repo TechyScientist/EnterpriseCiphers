@@ -106,6 +106,8 @@ public class OhaversAlgorithmSingleton implements OhaversAlgorithmSingletonLocal
                 return ".-.-";
             case '.':
                 return "---.";
+            case ' ':
+                return "------";
             default:
                 return "----";
         }
@@ -202,6 +204,8 @@ public class OhaversAlgorithmSingleton implements OhaversAlgorithmSingletonLocal
                 return ',';
             case "---.":
                 return '.';
+            case "------":
+                return ' ';
             default:
                 return '?';
         }
