@@ -20,4 +20,8 @@
 		<servlet-name>ShuffleTranspositionEncipherServlet</servlet-name>
 		<servlet-class>net.johnnyconsole.servlets.transposition.shuffle.ShuffleTranspositionEncipherServlet</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>ShuffleTranspositionDecipherServlet</servlet-name>
+		<servlet-class>net.johnnyconsole.servlets.transposition.shuffle.ShuffleTranspositionDecipherServlet</servlet-class>
+	</servlet>
 </web-app>
