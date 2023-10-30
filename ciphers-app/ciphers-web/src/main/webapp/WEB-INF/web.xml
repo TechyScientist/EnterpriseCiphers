@@ -16,4 +16,8 @@
 	    <servlet-name>OhaversAlgorithmServlet</servlet-name> 
 	    <servlet-class>net.johnnyconsole.servlets.ohavers.OhaversAlgorithmServlet</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>ShuffleTranspositionEncipherServlet</servlet-name>
+		<servlet-class>net.johnnyconsole.servlets.transposition.shuffle.ShuffleTranspositionEncipherServlet</servlet-class>
+	</servlet>
 </web-app>
