@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 @WebServlet("/transposition/shuffle/decipher")
-public class ShuffleTranspositionEncipherServlet extends HttpServlet {
+public class ShuffleTranspositionDecipherServlet extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
 	
