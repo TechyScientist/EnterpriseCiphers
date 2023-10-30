@@ -17,9 +17,9 @@ To build this project, you will need maven and wildfly installed.
 The algorithms currently supported by the web app are:
 * Enigma (Information Incomplete)
 * Ohaver's Algorithm
+* Shuffle Transposition Cipher (Information Incomplete)
 
 Support for the following algorithms is planned:
 * Bit Shift Algorithm (by means of rotation)
-* Caesar Cipher (substitution cipher)
+* Caesar Substitution Cipher
 * Matrix Transposition Cipher
-* Shuffle Transposition Cipher
