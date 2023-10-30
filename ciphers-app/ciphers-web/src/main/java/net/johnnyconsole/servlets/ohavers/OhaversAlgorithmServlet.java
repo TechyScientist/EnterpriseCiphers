@@ -28,7 +28,7 @@ public class OhaversAlgorithmServlet extends HttpServlet {
         	String message = request.getParameter("message").toUpperCase();
         	out.println("<b>Plain Text:</b> " + message.replace(" ", "_") + "<br/>");
         	out.println("<b>Cipher Text:</b> " + singleton.encipher(message));
-        	out.println("<br/><a href=\"../../ciphers/ohavers.html\">Return to Home</a>");
+        	out.println("<br/><a href=\"/ciphers/ohavers.html\">Return to Home</a>");
             
         } catch (Exception ex) {
             throw new ServletException(ex);

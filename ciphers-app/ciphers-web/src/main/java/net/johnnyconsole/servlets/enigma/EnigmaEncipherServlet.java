@@ -28,7 +28,7 @@ public class EnigmaEncipherServlet extends HttpServlet {
         	String message = request.getParameter("plaintext");
         	out.println("<b>Plain Text:</b> " + message);
         	out.println("<b>Cipher Text:</b> " + singleton.encipher(message));
-        	out.println("<br/><a href=\"../../ciphers/enigma.html\">Return to Home</a>");
+        	out.println("<br/><a href=\"/ciphers/enigma.html\">Return to Home</a>");
             
         } catch (Exception ex) {
             throw new ServletException(ex);

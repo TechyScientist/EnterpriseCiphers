@@ -55,7 +55,7 @@ public class InitializeEnigmaServlet extends HttpServlet {
         	singleton.saveConfiguration(request.getParameter("path"));
         	
         	out.println("<b>Enigma Initialized.</b> You will be redirected to the home page in 3 seconds.");
-        	response.setHeader("Refresh", "3; URL=../../ciphers/enigma.html");
+        	response.setHeader("Refresh", "3; URL=/ciphers/enigma.html");
             
         } catch (Exception ex) {
             throw new ServletException(ex);

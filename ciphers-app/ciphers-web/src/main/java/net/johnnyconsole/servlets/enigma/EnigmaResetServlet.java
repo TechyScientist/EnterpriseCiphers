@@ -28,7 +28,7 @@ public class EnigmaResetServlet extends HttpServlet {
         	String path = request.getParameter("path");
         	singleton.loadConfiguration(path);
         	out.println("<b>Configuration Loaded</b> from <i>" + path + "</i>. You will be redirected to the home page in 3 seconds.");
-        	response.setHeader("Refresh", "3; URL=../../ciphers/enigma.html");
+        	response.setHeader("Refresh", "3; URL=/ciphers/enigma.html");
             
         } catch (Exception ex) {
             throw new ServletException(ex);
