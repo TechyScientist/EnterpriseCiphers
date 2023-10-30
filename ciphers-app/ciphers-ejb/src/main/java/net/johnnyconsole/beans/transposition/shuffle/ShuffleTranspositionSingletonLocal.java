@@ -1,4 +1,4 @@
-package main.java.net.johnnyconsole.beans.transposition.shuffle;
+package net.johnnyconsole.beans.transposition.shuffle;
 
 import javax.ejb.Local;
 @Local
