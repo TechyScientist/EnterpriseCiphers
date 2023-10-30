@@ -27,9 +27,10 @@ public class ShuffleTranspositionEncipherServlet extends HttpServlet {
         	String plaintext = request.getParameter("plaintext").toUpperCase().replace(" ", "");
 			int key = Integer.parseInt(request.getParameter("shuffle"));
 
+			out.println("<b>Shuffle Key: </b> " + key + "<br/>");
         	out.println("<b>Plain Text:</b> " + plaintext + "<br/>");
         	out.println("<b>Cipher Text:</b> " + singleton.encipher(plaintext, key));
-        	out.println("<br/><a href=\"../../ciphers/shuffle.html\">Return to Home</a>");
+        	out.println("<br/><a href=\"/ciphers/shuffle.html\">Return to Home</a>");
             
         } catch (Exception ex) {
             throw new ServletException(ex);
