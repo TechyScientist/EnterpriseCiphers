@@ -1,6 +1,6 @@
 package net.johnnyconsole.servlets.transposition.shuffle;
 
-import net.johnnyconsole.beans.transposition.shuffle.ShuffleTranspositionSingleton;
+import net.johnnyconsole.beans.transposition.shuffle.ShuffleTranspositionSingletonLocal;
 
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
@@ -17,19 +17,19 @@ public class ShuffleTranspositionEncipherServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	@EJB
-	private ShuffleTranspositionSingleton singleton;
+	private ShuffleTranspositionSingletonLocal singleton;
 	
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
        
         try(PrintWriter out = response.getWriter()) { 
-        	String plaintext = request.getParameter("plaintext");
+        	String plaintext = request.getParameter("plaintext").toUpperCase().replace(" ", "");
 			int key = Integer.parseInt(request.getParameter("shuffle"));
 
-        	out.println("<b>Plain Text:</b> " + plaintext.replace(" ", "") + "<br/>");
+        	out.println("<b>Plain Text:</b> " + plaintext + "<br/>");
         	out.println("<b>Cipher Text:</b> " + singleton.encipher(plaintext, key));
-        	out.println("<br/><a href=\"../../ciphers/ohavers.html\">Return to Home</a>");
+        	out.println("<br/><a href=\"../../ciphers/shuffle.html\">Return to Home</a>");
             
         } catch (Exception ex) {
             throw new ServletException(ex);
