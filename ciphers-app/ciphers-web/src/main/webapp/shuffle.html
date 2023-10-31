@@ -52,6 +52,14 @@
 				width: 30px;
 				margin-left: 10px;
 			}
+
+			p a, li a {
+				margin-right: 0;
+			}
+
+			ul, ol {
+				margin-left: 40px;
+			}
 		</style>
 	</head>
 	
@@ -62,6 +70,14 @@
 		</div>
 		<div id="body">
 			<h3>About the Shuffle Transposition Cipher</h3>
+			<p>This cipher is based on Kattis problem <a href="https://open.kattis.com/problems/textencryption" target="_blank">Text Encryption (Kattis ID: textencryption)</a>, Summarized below:</p><br/>
+			<ul>
+				<li>The Kattis problem describes the deciphering algorithm as requiring the cipher text and a key value (n). The decipher algorithm starts at the firsr character of the cipher text, adds it to the plain text, skips (n - 1) characters, and adds it to the plaintext. This repeats until the end of the cipher string is reached, then is repeated starting with the second character in the cipher string (and so on) until all letters are used (i.e., the length of the plain text string is the same as the length of the cipher text string).</li>
+				<li>To encipher a string, a similar process is used. Starting from the first character, it is added to the cipher text, then (n - 1) characters are skipped, until the end of the string, repeating until all characters are used (i.e., the length of the cipher text matches the length of the message). </li>
+				<li>Without the shift key (n), the string is unreadable.</li>
+				<li>Due to slight differences in how the two algorithms need to work, they are <b>not</b> reversible! There is a separate enciphering and deciphering algorithm.</li>
+				<li><b>Note: </b>This algorithm does not support using spaces. <i>Spaces in the input string will automatically be removed, and the input string will automatically be converted to uppercase.</i></li>
+			</ul><br/>
 			<h3>Encipher Text with the Shuffle Transposition Cipher</h3>
 			<form action="/ciphers/transposition/shuffle/encipher" method="POST">
 				<label for="shuffle">Shuffle Key:</label>
@@ -77,7 +93,11 @@
 				<label for="ciphertext" style="vertical-align: top;">Text: </label>
 				<textarea name="ciphertext"></textarea><br/><br/>
 				<input type="submit" value="Decipher Text"/>
-			</form>
+			</form><br/>
+			<h3>References for this Algorithm</h3>
+			<ul>
+				<li>Kattis Problem <a href="https://open.kattis.com/problems/textencryption" target="_blank">textencryption</a></li>
+			</ul>
 		</div>
 		
 		<hr/>
