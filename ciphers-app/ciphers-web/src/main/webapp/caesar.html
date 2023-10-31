@@ -35,16 +35,40 @@
 				background: #B3282D;
 				height: 20px;
 			}
+
+			textarea {
+				width: 400px;
+				height: 100px;
+				margin-left: 10px;
+				overflow: auto;
+				resize: none;
+			}
+
+			input {
+				padding: 5px;
+			}
+
+			input[type="text"] {
+				width: 200px;
+			}
 		</style>
 	</head>
 	
 	<body>
 		<div id="header">
-			<h1>Caeser Cipher</h1>
+			<h1>Caesar Cipher</h1>
 			<h5>Author: Johnny Console</h5>
 		</div>
 		<div id="body">
 			<h3>About the Caesar Cipher</h3>
+			<h3>Use the Caesar Cipher</h3>
+			<form action="/ciphers/caesar/encipher" method="POST">
+				<label for="key">Cipher Key:</label>
+				<input type="text" name="key" /><br/><br/>
+				<label for="message" style="vertical-align: top;">Message:</label>
+				<textarea name="message"></textarea><br/><br/>
+				<input type="submit" value="Encipher Message">
+			</form>
 		</div>
 		
 		<hr/>
