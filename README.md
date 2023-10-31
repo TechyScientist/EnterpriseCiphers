@@ -23,4 +23,3 @@ The algorithms currently supported by the web app are:
 Support for the following algorithms is planned:
 * Bit Shift Algorithm (by means of rotation)
 * Matrix Transposition Cipher
-* Addition Cipher
