@@ -24,4 +24,8 @@
 		<servlet-name>ShuffleTranspositionDecipherServlet</servlet-name>
 		<servlet-class>net.johnnyconsole.servlets.transposition.shuffle.ShuffleTranspositionDecipherServlet</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>CaesarServlet</servlet-name>
+		<servlet-class>net.johnnyconsole.servlets.caesar.CaesarServlet</servlet-class>
+	</servlet>
 </web-app>

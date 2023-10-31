@@ -9,10 +9,12 @@ public class CaesarSingleton implements CaesarSingletonLocal, CaesarSingletonRem
 
 	@Override
 	public String encipher(String message, String cipherKey) {
+        StringBuilder ciphertext = new StringBuilder(message);
         for (int i = 0; i < message.length(); i++) {
-            message = message.replace(message.charAt(i), cipherKey.charAt(message.charAt(i) - 'A'));
+            if(message.charAt(i) == ' ') continue;
+            ciphertext.replace(i, i + 1, cipherKey.charAt(message.charAt(i) - 'A') + "");
         }
-        return message;
+        return ciphertext.toString();
 	}
 
 

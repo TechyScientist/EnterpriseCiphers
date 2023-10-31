@@ -18,9 +18,9 @@ The algorithms currently supported by the web app are:
 * Enigma (Information Incomplete)
 * Ohaver's Algorithm
 * Shuffle Transposition Cipher (Information Incomplete)
+* Caesar Substitution Cipher (Information Incomplete)
 
 Support for the following algorithms is planned:
 * Bit Shift Algorithm (by means of rotation)
-* Caesar Substitution Cipher
 * Matrix Transposition Cipher
 * Addition Cipher
