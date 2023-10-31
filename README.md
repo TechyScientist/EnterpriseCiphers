@@ -23,3 +23,4 @@ Support for the following algorithms is planned:
 * Bit Shift Algorithm (by means of rotation)
 * Caesar Substitution Cipher
 * Matrix Transposition Cipher
+* Addition Cipher
