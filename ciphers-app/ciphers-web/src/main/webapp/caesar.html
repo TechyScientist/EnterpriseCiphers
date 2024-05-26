@@ -62,12 +62,13 @@
 		<div id="body">
 			<a href="/ciphers">Return to Home</a><br/><br/>
 			<h3>About the Caesar Cipher</h3>
+			<!-- TODO: Add Information section on the Caeser Cipher -->
 			<h3>Use the Caesar Cipher</h3>
 			<form action="/ciphers/caesar/encipher" method="POST">
 				<label for="key">Cipher Key:</label>
-				<input type="text" name="key" /><br/><br/>
+				<input type="text" name="key" id="key" required/><br/><br/>
 				<label for="message" style="vertical-align: top;">Message:</label>
-				<textarea name="message"></textarea><br/><br/>
+				<textarea name="message" id="message" required></textarea><br/><br/>
 				<input type="submit" value="Encipher Message">
 			</form>
 		</div>

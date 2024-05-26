@@ -72,11 +72,10 @@
 				<li>A morse code string is generated alongside a string of numbers, representing the length of each encoded character.</li>
 				<li>Spaces are removed from the morse string, so that without the key (the number string), the string is unreadable.</li>
 				<li>The number string is then reversed, and the morse string is decoded with those values, creating the ciphertext.</li>
-				<li>Due to the nature of the algorithm, using the ciphertext in the algorithm will return the plaintext string.</li>
+				<li>Ohaver's Algorithm is symmetric: using the ciphertext as an input to the algorithm will return the plaintext string.</li>
 				<li><b>Note: </b>This algorithm does not support using spaces, numbers or any other symbols not defined in the table below. <i>Spaces in the input string will automatically be converted to the underscore "_" character.</i></li>
 			</ul><br/>
 		<h3>Morse Code Chart (A-Z, 0-9, and Selected Symbols)</h3>
-		<!--  TODO: Add Morse Codes to Chart -->
 		<table cellspacing=10 style="text-align:center;">
 			<tr>
 				<th>Letter</th>
@@ -169,7 +168,7 @@
 		<h3>Use Ohaver's Algorithm</h3>
 		<form action="/ciphers/ohavers/encrypt" method="POST">
 			<label for="message" style="vertical-align:top;">Message:</label>
-			<textarea name="message"></textarea> <br/><br/>
+			<textarea name="message" id="message" required></textarea> <br/><br/>
 			<input type="submit" value="Encrypt/Decrypt Text"/>
 		</form><br/>
 		<h3>References for this Algorithm</h3>
