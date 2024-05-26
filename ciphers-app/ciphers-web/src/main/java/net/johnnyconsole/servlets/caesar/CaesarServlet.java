@@ -25,10 +25,19 @@ public class CaesarServlet extends HttpServlet {
 		response.setContentType("text/html;charset=UTF-8");
        
         try(PrintWriter out = response.getWriter()) { 
-        	String message = request.getParameter("message").toUpperCase(),
+        	String mode = request.getParameter("mode"),
+					message = request.getParameter("message").toUpperCase(),
 					cipherKey = request.getParameter("key").toUpperCase();
-        	out.println("<b>Plain Text:</b> " + message + "<br/>");
-        	out.println("<b>Cipher Text:</b> " + singleton.encipher(message, cipherKey));
+
+			out.println("<b>Cipher Key:</b> " + cipherKey + "<br/>");
+			if(mode.equals("Enciphering")) {
+				out.println("<b>Plain Text:</b> " + message + "<br/>");
+				out.println("<b>Cipher Text:</b> " + singleton.encipher(message, cipherKey));
+			}
+			else {
+				out.println("<b>Cipher Text:</b> " + message + "<br/>");
+				out.println("<b>Plain Text:</b> " + singleton.decipher(message, cipherKey));
+			}
         	out.println("<br/><a href=\"/ciphers/caesar.html\">Return to Home</a>");
             
         } catch (Exception ex) {
