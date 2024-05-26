@@ -22,7 +22,7 @@ public class CaesarSingleton implements CaesarSingletonLocal, CaesarSingletonRem
         StringBuilder plaintext = new StringBuilder(message);
         for (int i = 0; i < message.length(); i++) {
             if(message.charAt(i) == ' ') continue;
-            plaintext.replace(i, i + 1, 'A' + (cipherKey.indexOf(message.charAt(i))) + "");
+            plaintext.replace(i, i + 1, (char)(cipherKey.indexOf(message.charAt(i)) + 'A') + "");
         }
         return plaintext.toString();
     }
