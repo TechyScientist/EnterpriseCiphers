@@ -62,9 +62,13 @@
 		<div id="body">
 			<a href="/ciphers">Return to Home</a><br/><br/>
 			<h3>About the Caesar Cipher</h3>
-			<!-- TODO: Add Information section on the Caeser Cipher -->
+			<p>The Caesar Cipher is a ciphering algorithm containing two "alphabets": one of which is the normal alphabet (A-Z in order). The other alphabet is the key to the cipher. For each letter in the message, it is replaced with the letter at the corresponding position in the key alphabet.</p><br/>
+			<p>The Caesar Cipher algorithm is <b>symmetric</b>. In cryptography, an algorithm is defined as <i>symmetric</i> if the enciphered text (or ciphertext) can be given to the same algorithm as an input and the same plain text will be generated. We can say the Caesar cipher is symmetric because we know both alphabets when we encipher or decipher a message. The only difference between enciphering text and deciphering text in the Caesar cipher is which alphabet gets read from to create the generated text.</p><br/>
 			<h3>Use the Caesar Cipher</h3>
 			<form action="/ciphers/caesar/encipher" method="POST">
+				<label for="mode">I am:</label>
+				<input type="radio" name="mode" id="mode" value="Enciphering" checked/>
+				<input type="radio" name="mode" value="Deciphering"/>
 				<label for="key">Cipher Key:</label>
 				<input type="text" name="key" id="key" required/><br/><br/>
 				<label for="message" style="vertical-align: top;">Message:</label>
