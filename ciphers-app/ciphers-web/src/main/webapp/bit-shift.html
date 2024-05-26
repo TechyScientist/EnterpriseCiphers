@@ -30,6 +30,32 @@
 				color: #B3282D;
 				margin-right: 10px;
 			}
+
+			p#label, input[type="radio"] {
+				display: inline-block;
+			}
+
+			input[type="radio"] {
+				margin-left: 5px;
+			}
+
+			input[type="number"] {
+				padding: 5px;
+				width: 30px;
+				margin-left: 10px;
+			}
+
+			textarea {
+				width: 400px;
+				height: 100px;
+				margin-left: 10px;
+				overflow: auto;
+				resize: none;
+			}
+
+			input[type="submit"] {
+				padding: 5px;
+			}
 			
 			hr {
 				background: #B3282D;
@@ -46,13 +72,25 @@
 		<div id="body">
 			<a href="/ciphers">Return to Home</a><br/><br/>
 			<h3>About The Bit Shift Cipher</h3>
-			<!-- TODO: Add Information section on Bit Shift Ciphers -->
-
-			<h3>Encipher Text With The Bit Shift Cipher</h3>
-			<!-- TODO: Create form and servlet component for Bit Shift Enciphering -->
-
-			<h3>Encipher Text With The Bit Shift Cipher</h3>
-			<!-- TODO: Create form and servlet component for Bit Shift Enciphering -->
+			<p>Bit Shift Ciphers, or in this case, Bit Rotation Ciphers, use the fact that characters are represented by their <a href="https://www.asciitable.com/">binary ASCII values</a> in a computer. By manipulating those binary values by shifting them or rotating them by some number of bits the left or right, their value can be changed. Then, by shifting them the opposite direction (right or left respectively) by the same number of bits, the original value can be retained. The number of shifts is called the Shift Key.</p><br/>
+			<p>Students of any Assembler course would be familiar with the concepts of bit shifting and bit rotations, and why it is generally better to use rotation shifting for this purpose.</p><br/>
+			<p>In general, bit shifts will take the binary representation of a number, shift its bits in one direction and fill the empty spaces with zeros. <i>Example: </i>1011 0110 shifted left one bit is 0110 1100. Notice the number of significant bits (1's) is NOT preserved: if a 1 is shifted, it gets removed from the binary value.</p><br/>
+			<p>On the other hand, rotations will take the binary representation of a number and still shift the bits in one direction, but instead of filling the empty spaces with zeros, they are filled with the digit that was removed. <i>Example: </i>0110 1100 rotated left one bit is 0110 1101. Notice the number of significant bits (1's) is retained here: this is why it's generally better to use rotations - the original value returns when the opposite operation is done on the new bit pattern.</p><br/>
+			<p>Character sizes can be different depending on the system type (and sometimes the programming language). This algorithm assumes characters have a byte length (8 bits).</p><br/>
+			<p>Since there are two rotation directions, this algorithm doesn't have specific enciphering and deciphering algorithms. Your recipient would need to know the direction of the <i>enciphering</i> shift (so they can reverse it for the <i>deciphering shift</i>), the shift key and the ciphertext to produce the correct plain text. <b>The webpage shown after a message is enciphered will show you all of these.</b></p><br/>
+			<h3>Use The Bit Shift Cipher</h3>
+			<form action="/ciphers/bit-shift/encipher" method="POST">
+				<p id="label">Shift Direction:</p>
+				<input type="radio" name="mode" id="left" value="left" checked/>
+				<label for="left">Left</label>
+				<input type="radio" name="mode" id="right" value="right"/>
+				<label for="right">Right</label><br/><br/>
+				<label for="key">Shift Key:</label>
+				<input type="number" name="key" id="key" required/><br/><br/>
+				<label for="message" style="vertical-align: top;">Message:</label>
+				<textarea name="message" id="message" required></textarea><br/><br/>
+				<input type="submit" value="Encipher Message">
+			</form>
 		</div>
 		
 		<hr/>
