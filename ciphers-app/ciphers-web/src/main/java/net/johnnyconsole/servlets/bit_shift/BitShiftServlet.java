@@ -20,7 +20,7 @@ public class BitShiftServlet extends HttpServlet {
 	private BitShiftSingleton singleton;
 	
 	@Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException {
 		response.setContentType("text/html;charset=UTF-8");
        
         try(PrintWriter out = response.getWriter()) { 
