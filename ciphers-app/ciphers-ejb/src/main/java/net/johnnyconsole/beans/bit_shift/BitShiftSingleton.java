@@ -7,6 +7,8 @@ import javax.ejb.Singleton;
 @LocalBean
 public class BitShiftSingleton implements BitShiftLocal, BitShiftRemote {
 
+
+    // TODO: FIX THIS!!
 	@Override
 	public String encipher(String message, boolean shift, int key) {
         StringBuilder ciphertext = new StringBuilder(message);
@@ -22,11 +24,19 @@ public class BitShiftSingleton implements BitShiftLocal, BitShiftRemote {
 	}
 
     private char ror(char c, int key) {
-        return (char)(((byte)c >>> (key % 8)) | ((byte)c << ((key % 8))));
+        String s = Integer.toBinaryString((byte)c);
+        for(int i = 0; i < key; i++) {
+            s = s.charAt(s.length() - 1) + s.substring(0, s.length() - 1);
+        }
+        return (char)(Integer.parseInt(s, 2));
     }
 
     private char rol(char c, int key) {
-        return (char)(((byte)c << (key % 8)) | ((byte)c >>> ((key%8))));
+        String s = Integer.toBinaryString((byte)c);
+        for(int i = 0; i < key; i++) {
+            s = s.substring(1) + s.charAt(0);
+        }
+        return (char)(Integer.parseInt(s, 2));
     }
 
 

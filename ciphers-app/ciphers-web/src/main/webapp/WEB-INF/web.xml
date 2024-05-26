@@ -28,4 +28,8 @@
 		<servlet-name>CaesarServlet</servlet-name>
 		<servlet-class>net.johnnyconsole.servlets.caesar.CaesarServlet</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>BitShiftServlet</servlet-name>
+		<servlet-class>net.johnnyconsole.servlets.bit_shift.BitShiftServlet</servlet-class>
+	</servlet>
 </web-app>
