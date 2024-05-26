@@ -6,4 +6,5 @@ import javax.ejb.Remote;
 public interface CaesarSingletonRemote {
 	
 	public String encipher(String message, String cipherKey);
+	public String decipher(String message, String cipherKey);
 }

@@ -6,5 +6,6 @@ import javax.ejb.Local;
 public interface CaesarSingletonLocal {
 	
 	public String encipher(String message, String cipherKey);
+	public String decipher(String message, String cipherKey);
 
 }

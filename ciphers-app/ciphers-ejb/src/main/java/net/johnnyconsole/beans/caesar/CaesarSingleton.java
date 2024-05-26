@@ -17,5 +17,15 @@ public class CaesarSingleton implements CaesarSingletonLocal, CaesarSingletonRem
         return ciphertext.toString();
 	}
 
+    @Override
+    public String decipher(String message, String cipherKey) {
+        StringBuilder plaintext = new StringBuilder(message);
+        for (int i = 0; i < message.length(); i++) {
+            if(message.charAt(i) == ' ') continue;
+            plaintext.replace(i, i + 1, 'A' + (cipherKey.indexOf(message.charAt(i))) + "");
+        }
+        return plaintext.toString();
+    }
+
 
 }
