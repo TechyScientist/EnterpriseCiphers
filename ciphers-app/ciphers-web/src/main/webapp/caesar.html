@@ -66,9 +66,10 @@
 			<p>The Caesar Cipher algorithm is <b>symmetric</b>. In cryptography, an algorithm is defined as <i>symmetric</i> if the enciphered text (or ciphertext) can be given to the same algorithm as an input and the same plain text will be generated. We can say the Caesar cipher is symmetric because we know both alphabets when we encipher or decipher a message. The only difference between enciphering text and deciphering text in the Caesar cipher is which alphabet gets read from to create the generated text.</p><br/>
 			<h3>Use the Caesar Cipher</h3>
 			<form action="/ciphers/caesar/encipher" method="POST">
-				<label for="mode">I am:</label>
-				<input type="radio" name="mode" id="mode" value="Enciphering" checked/>
-				<input type="radio" name="mode" value="Deciphering"/>
+				<input type="radio" name="mode" id="encipher" value="Enciphering" checked/>
+				<label for="encipher">Encipher Mode</label>
+				<input type="radio" name="mode" id="decipher" value="Deciphering"/>
+				<label for="decipher">Decipher Mode</label><br/><br/>
 				<label for="key">Cipher Key:</label>
 				<input type="text" name="key" id="key" required/><br/><br/>
 				<label for="message" style="vertical-align: top;">Message:</label>
