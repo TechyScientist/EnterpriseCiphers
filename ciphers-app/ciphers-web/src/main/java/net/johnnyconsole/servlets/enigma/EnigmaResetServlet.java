@@ -1,6 +1,5 @@
 package net.johnnyconsole.servlets.enigma;
 
-import java.io.IOException;
 import java.io.PrintWriter;
 
 import javax.ejb.EJB;
@@ -21,7 +20,7 @@ public class EnigmaResetServlet extends HttpServlet {
 	private EnigmaSingletonRemote singleton;
 	
 	@Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException {
 		response.setContentType("text/html;charset=UTF-8");
        
         try(PrintWriter out = response.getWriter()) { 

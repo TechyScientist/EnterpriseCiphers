@@ -1,7 +1,6 @@
 package net.johnnyconsole.servlets.caesar;
 
 import net.johnnyconsole.beans.caesar.CaesarSingleton;
-import net.johnnyconsole.beans.ohavers.OhaversAlgorithmSingleton;
 
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
