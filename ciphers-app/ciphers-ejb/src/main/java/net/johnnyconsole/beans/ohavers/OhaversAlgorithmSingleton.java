@@ -7,22 +7,23 @@ import javax.ejb.Singleton;
 @LocalBean
 public class OhaversAlgorithmSingleton implements OhaversAlgorithmSingletonLocal, OhaversAlgorithmSingletonRemote {
 
-	private String morse = "", numbers = "";
+	private StringBuilder morse = new StringBuilder(), numbers = new StringBuilder();
 	
 	@Override
 	public String encipher(String message) {
 		morseify(message);
-        numbers = new StringBuilder(numbers).reverse().toString();
-        message = demorseify(morse);
+        numbers = new StringBuilder(numbers).reverse();
+        message = demorseify(morse.toString());
         return message;
 	}
 	
 	private void morseify(String message) {
-        morse = numbers = "";
+        morse = new StringBuilder();
+        numbers = new StringBuilder();
         for (int i = 0; i < message.length(); i++) {
             String morseCh = morse(message.charAt(i));
-            morse += morseCh;
-            numbers += morseCh.length();
+            morse.append(morseCh);
+            numbers.append(morseCh.length());
             System.out.println("m: " + morseCh + ", p: " + demorse(morseCh));
             System.out.println(message);
         }
@@ -94,14 +95,14 @@ public class OhaversAlgorithmSingleton implements OhaversAlgorithmSingletonLocal
     }
 
     private String demorseify(String morse) {
-        String message = "";
+        StringBuilder message = new StringBuilder();
         while(numbers.length() > 0) {
             int n = numbers.charAt(0) - '0';
-            numbers = numbers.substring(1);
-            message += demorse(morse.substring(0, n));
+            numbers.deleteCharAt(0);
+            message.append(demorse(morse.substring(0, n)));
             morse = morse.substring(n);
         }
-        return message;
+        return message.toString();
     }
 
     private char demorse(String s) {
