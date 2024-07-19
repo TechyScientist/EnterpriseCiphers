@@ -5,6 +5,6 @@ import javax.ejb.Local;
 @Local
 public interface OhaversAlgorithmSingletonLocal {
 	
-	public String encipher(String message);
+	String encipher(String message);
 
 }

@@ -5,5 +5,5 @@ import javax.ejb.Remote;
 @Remote
 public interface OhaversAlgorithmSingletonRemote {
 	
-	public String encipher(String message);
+	String encipher(String message);
 }

@@ -8,9 +8,9 @@ import net.johnnyconsole.algorithms.enigma.Rotor;
 @Local
 public interface EnigmaStatefulLocal {
 
-	public void setRotors(Rotor left, Rotor middle, Rotor right);
-	public void setReflector(Reflector reflector);
-	public void setPlugboardPairs(String... pairs);
-	public void initialize();
+	void setRotors(Rotor left, Rotor middle, Rotor right);
+	void setReflector(Reflector reflector);
+	void setPlugboardPairs(String... pairs);
+	void initialize();
 	
 }
