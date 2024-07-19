@@ -4,6 +4,7 @@ import javax.ejb.Singleton;
 import javax.ejb.LocalBean;
 
 @Singleton
+@LocalBean
 public class ShuffleTranspositionSingleton implements ShuffleTranspositionSingletonLocal, ShuffleTranspositionSingletonRemote {
     public String encipher(String plaintext, int key) {
         char[] ciphertext = new char[plaintext.length()];
