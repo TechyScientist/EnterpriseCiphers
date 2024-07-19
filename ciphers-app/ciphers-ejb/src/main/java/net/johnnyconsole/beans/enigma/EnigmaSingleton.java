@@ -1,10 +1,10 @@
 package net.johnnyconsole.beans.enigma;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 import javax.ejb.LocalBean;
 import javax.ejb.Singleton;
@@ -34,7 +34,7 @@ public class EnigmaSingleton implements EnigmaSingletonLocal, EnigmaSingletonRem
 
 	@Override
 	public void saveConfiguration(String path) {
-		try(ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(path))) {
+		try(ObjectOutputStream out = new ObjectOutputStream(Files.newOutputStream(Paths.get(path)))) {
 			out.writeObject(enigma);
 		} catch(IOException ex) {
 			System.err.println("Error: " + ex.getMessage());
@@ -43,7 +43,7 @@ public class EnigmaSingleton implements EnigmaSingletonLocal, EnigmaSingletonRem
 
 	@Override
 	public void loadConfiguration(String path) {
-		try(ObjectInputStream in = new ObjectInputStream(new FileInputStream(path))) {
+		try(ObjectInputStream in = new ObjectInputStream(Files.newInputStream(Paths.get(path)))) {
 			enigma = (Enigma)(in.readObject());
 		} catch(IOException | ClassNotFoundException ex) {
 			System.err.println("Error: " + ex.getMessage());
